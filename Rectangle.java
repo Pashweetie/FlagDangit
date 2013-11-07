@@ -4,16 +4,18 @@ public class Rectangle {
 
 	private Point topLeft;
 	private int width,height;
+	private Color color;
 
-	public void Rectange(int width, int height) {
-		this.topleft = new Point(x,y);
+	public Rectangle(int x, int y,int width, int height, Color color) {
+		this.topLeft = new Point(x,y);
 		this.width = width;
 		this.height = height;
+		this.color = color;
 	}
 	public void draw(Graphics g) {
 		Color originalColor = g.getColor();
 		g.setColor(color);
-		g.fillRect(topLeft.getX(), topLeft.getY(), width, height, color;
+		g.fillRect(topLeft.getX(), topLeft.getY(), width, height);
 		g.setColor(originalColor);
 	}
 }

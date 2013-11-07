@@ -3,7 +3,8 @@ import java.applet.*;
 
 public class AmericanFlag{
 	private Rectangle union;
-	private Rectangle[] stripes;
+	private Rectangle[] stripes = new Rectangle[13];
+	private Rectangle stripe;
 	private Point topLeft;
 	private int width = 190, height = 100;
 	private double scale;
@@ -19,14 +20,13 @@ public class AmericanFlag{
 		int unionHeight = 7 * stripeHeight;
 
 		union = new Rectangle(x,y,unionWidth,unionHeight,Color.blue);
-
-		stripes = new Rectangle[13];
 		for (int i = 0; i<stripes.length ; i++) {
 			Color color = Color.red;
 			if (i % 2 ==1) {
 				color = Color.white;
 			}
-			Rectangle stripe = new Rectangle(x,y+i*stripeHeight, width, height, color);
+			stripe = new Rectangle(x,y+i*stripeHeight, width, height, color);
+			stripes[i] = stripe;
 		}
 	}
 	public void draw(Graphics g) {		
